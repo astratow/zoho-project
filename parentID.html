@@ -1,0 +1,7 @@
+list parentID()
+{
+	childRec = Child[Parent_Administrator == "artur.mickiewicz"].Child_Register.getAll();
+	chNamelist = Child_Name[ID in childRec].ID.getAll();
+	info childRec;
+	return chNamelist;
+}

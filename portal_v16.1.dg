@@ -1,0 +1,505 @@
+<%{
+    childRec = Child[Parent_Administrator == zoho.loginuser];
+    children = Child[Child_Name.first_name.contains(input.first_name)];
+    //  [ID in childRec && Child_Name.first_name.contains(input.first_name)];
+    //  [Child_Name.first_name.contains(input.first_name)];
+    //  FEUempty=children.Free_Entitlement_Universal.isEmpty();
+    for each  child in children
+    {
+        %>
+<h2>
+<%
+        FEUempty = child.Free_Entitlement_Universal.isEmpty();
+        if(!child.Child_Name.first_name.isEmpty() && !child.Child_Name.last_name.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Name.first_name%> <%=child.Child_Name.last_name%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</h2>
+<h3><%=childRec%></h3>
+<h3><%=FEUempty%></h3>
+<p>Gender:
+<%
+        if(!child.Child_Gender.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Gender%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Date of Birth:&nbsp
+<%
+        /*      if(!child.Child_DateofBirth.isEmpty())
+        {*/
+        %>
+<%=child.Child_DateofBirth%></p>
+<%
+        /*
+        }
+        else
+        {_Missing Child_DateofBirth
+        */
+        //}
+        %>
+</p>
+<p>Known As:
+<%
+        if(!child.Known_As.isEmpty())
+        {
+            %>
+&nbsp<%=child.Known_As%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Syblings:
+<%
+        if(!child.Child_Siblings.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Siblings%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Religion:
+<%
+        if(!child.Child_Religion.isEmpty())
+        {
+            %>
+<%=child.Child_Religion%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<hr>
+<p>Address:
+<%
+        if(!child.Child_Address_Home.address_line_1.isEmpty())
+        {
+            %>
+<br><%=child.Child_Address_Home.address_line_1%>
+<%
+        }
+        else
+        {
+            %>
+&nbspLine 1 Not Entered
+<%
+        }
+        if(!child.Child_Address_Home.address_line_2.isEmpty())
+        {
+            %>
+<br><%=child.Child_Address_Home.address_line_2%>
+<%
+        }
+        %>
+<br>
+<%
+        if(!child.Child_Address_Home.district_city.isEmpty())
+        {
+            %>
+<%=child.Child_Address_Home.district_city%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+<br>
+<%
+        if(!child.Child_Address_Home.state_province.isEmpty())
+        {
+            %>
+<%=child.Child_Address_Home.state_province%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+<br>
+<%
+        if(!child.Child_Address_Home.postal_Code.isEmpty())
+        {
+            %>
+<%=child.Child_Address_Home.postal_Code%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+<br><%=child.Child_Address_Home.country%>
+<br></p>
+<hr>
+<p>Dietary code:
+<%
+        if(!child.Dietary_Requirements.isEmpty())
+        {
+            %>
+&nbsp<%=child.Dietary_Requirements%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+<p>Allergies:
+<%
+        if(!child.Child_Allergies.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Allergies%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Medical Details:
+<%
+        if(!child.Child_Medical_Details1.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Medical_Details1%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<hr>
+<p>Doctor</p>
+<p>Doctors Name:
+<%
+        if(!child.Child_Doctor.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Doctor%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Surgery Phone Number:
+<%
+        if(!child.Doctor_s_Phone_Number.isEmpty())
+        {
+            %>
+<%=child.Doctor_s_Phone_Number%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+<p>Address of Surgery:
+<%
+        if(!child.Doctor_s_Address.isEmpty())
+        {
+            %>
+&nbsp<%=child.Doctor_s_Address%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<hr>
+<p>Childcare Setting:
+<%
+        if(!child.Childcare_Setting.isEmpty())
+        {
+            %>
+&nbsp<%=child.Childcare_Setting.Setting_Name%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered Childcare_Setting
+<%
+        }
+        %>
+<p>Attendance Period: <%=child.Attendance_Start_Date%>   -
+<%
+        if(!child.Attendance_Leaving_Date == null)
+        {
+            %>
+&nbsp<%=child.Attendance_Leaving_Date%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbsp(Leaving Date) Not Entered
+<%
+        }
+        %>
+&nbsp<%=child.Attendance_Leaving_Date%></p>
+<p>Term Time only:
+<%
+        if(child.Term_Time_Only)
+        {
+            %>
+&nbspYes
+<%
+        }
+        else
+        {
+            %>
+&nbspNo
+<%
+        }
+        %>
+</p>
+<p>Status:
+<%
+        if(!child.Child_Status.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Status%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Account Administrative User:
+<%
+        if(!child.Parent_Administrator.isEmpty())
+        {
+            %>
+&nbsp<%=child.Parent_Administrator%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Billing contact name:
+<%
+        if(!child.Billing_Contact_Name.isEmpty())
+        {
+            %>
+&nbsp<%=child.Billing_Contact_Name%></p>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Billing email address:
+<%
+        if(!child.Billing_email_address.isEmpty())
+        {
+            %>
+&nbsp<%=child.Billing_email_address%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Email Opt-In:&nbsp<%=child.eMail_Opt_in%></p>
+<p>Registration Form:
+<%
+        if(!child.Child_Registration_Form.isEmpty())
+        {
+            %>
+&nbsp<%=child.Child_Registration_Form%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>FE Forms:
+
+</p>
+<p>FE Effective Date:
+<%
+        if(!child.Eligibility_Code_Start_Date != null)
+        {
+            %>
+&nbsp<%=child.Eligibility_Code_Start_Date%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>Total Weekly Free Entitlement:
+<%
+        if(!child.Free_Entitlement_Universal.isEmpty())
+        {
+            %>
+&nbsp<%=child.Free_Entitlement_Universal + child.Free_Entitlement_Extended%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>FE extended portion ( included in total above):
+<%
+        if(!child.Free_Entitlement_Extended.isEmpty())
+        {
+            %>
+&nbsp<%=child.Free_Entitlement_Extended%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<p>FE Eligibility Code (30h):
+<%
+        if(!child.Free_Entitlement_Extended.isEmpty())
+        {
+            %>
+&nbsp<%=child.Free_Entitlement_Extended%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<hr>
+<p>Additional Information/Comments:
+<%
+        if(!child.Additional_information_and_comments.isEmpty())
+        {
+            %>
+&nbsp<%=child.Additional_information_and_comments%>
+<%
+        }
+        else
+        {
+            %>
+&nbspNot Entered
+<%
+        }
+        %>
+</p>
+<hr>
+<h2>Parents/Guardians/Contacts</h2>
+<p>Full Name: </p>
+<p>Relationship:  </p>
+<p>Is Emergency Contact?:  </p>
+<p>Mobile Phone:  </p>
+<hr>
+<p>Full Name: </p>
+<p>Relationship:  </p>
+<p>Is Emergency Contact?:  </p>
+<p>Mobile Phone:  </p>
+<p>Work Phone:  </p>
+<hr>
+<h2>Booking Profile</h2>
+<p> <%=child.Show_Booking_Profile%></p>
+<%
+    }
+
+}%>

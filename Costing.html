@@ -1,0 +1,1158 @@
+<%{
+	%>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<title>costings</title>
+	
+	<!-- Style CSS section -->
+	<style type="text/css">
+	.t510{
+		width:50%;
+	}
+	.t70{
+		width:70%;
+	}
+	.t60{
+		width:60%;
+	}	
+	.w3-darker-grey{
+		background: #DCDCDC;
+	}</style>
+	<!--End of CSS styling section -->
+	
+
+</head>
+<%
+	link = "#Page:costing_monthly?ID=" + input.param;
+	home = "#Children";
+	childcareBookings = Childcare_Bookings[Child_Name == input.param.toLong()];
+	if(childcareBookings.count() > 0)
+	{
+		/*&&!childcareBookings.isEmpty()*/
+		/********************************************************/
+		/********* beginning of Childcare_Bookings loop *********/
+		/********************************************************/
+		for each  booking in childcareBookings
+		{
+			childName = Child[ID == booking.Child_Name];
+			setting = Childcare_Settings[ID == booking.Childcare_Settings];
+			chBookings = Childcare_Bookings[ID == booking];
+			%>
+<body>
+<div class="w3-padding w3-bar">
+<a class="w3-button w3-border w3-border-teal w3-hover-teal w3-left" href="<%=link%>">
+ &lsh;  Back</a>&nbsp
+ <a class="w3-button w3-border w3-border-teal w3-hover-teal w3-right" href="<%=home%>">
+ <i class="fa-solid fa-house"></i> Home</a>
+  </div>
+<div class="col-container w3-content w3-padding">
+		<div class="w3-row-padding w3-padding">
+	<table class="tg w3-table w3-bordered">
+
+	<tr class="w3-darker-grey">
+	<td class="t510">
+		Child Name
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!childName.Child_Name.first_name.isEmpty())
+			{
+				%>
+<%=childName.Child_Name.first_name%>
+<%
+			}
+			else
+			{
+				%>
+First Name Not Entered
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+&nbsp
+<%
+			/************* Begin of if  Statement *************/
+			if(!childName.Child_Name.last_name.isEmpty())
+			{
+				%>
+<%=childName.Child_Name.last_name%>
+<%
+			}
+			else
+			{
+				%>
+Last Name Not Entered
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Childcare Setting:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!setting.Setting_Name.toString().isEmpty())
+			{
+				%>
+<%=setting.Setting_Name%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+		Booking Status:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Booking_Status.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Booking_Status%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	</table>
+	</div>
+
+	<!-- row 2-->
+	<div class="">
+	<div class="w3-half w3-padding">
+	<table class="tg w3-table w3-bordered">
+
+	<tr class="w3-darker-grey">
+	<td>
+		<h2>Pre-Booked Session</h2>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Pre_Booked_Date_and_Start_Time.toString().isEmpty())
+			{
+				%>
+<%=thisapp.whatDayIsIt(chBookings.Pre_Booked_Date_and_Start_Time)%>,&nbsp<%=chBookings.Pre_Booked_Date_and_Start_Time%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	<td ></td>
+
+	<tr class="w3-light-grey">
+	<td class="t70">
+		Pre-Booked Duration (h): 
+	</td>
+	<td >
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Pre_Booked_Charged_Duration.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Pre_Booked_Charged_Duration%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-darker-grey">
+	<td class="t70">
+		Pre-Booked FE:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Pre_Booked_Session_Free_Entitlement.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Pre_Booked_Session_Free_Entitlement%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Pre-Booked Holiday:
+	</td>
+	<td>
+<%
+			if(chBookings.Pre_Booked_Holiday.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Pre_Booked_Holiday == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Pre_Booked_Holiday == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-darker-grey">
+	<td>
+		Pre-Booked Cancelled Booking:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Pre_Booked_Cancelled_Booking.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Pre_Booked_Cancelled_Booking == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Pre_Booked_Cancelled_Booking == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Pre-Booked Settling in Session:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Pre_Booked_Settling_In_Session.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Pre_Booked_Settling_In_Session == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Pre_Booked_Settling_In_Session == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-darker-grey">
+	<td>
+		Pre-Booked Surcharge:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Pre_Booked_Surcharge.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Pre_Booked_Surcharge == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Pre_Booked_Surcharge == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Pre-Booked Holiday:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Pre_Booked_Holiday.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Pre_Booked_Holiday == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Pre_Booked_Holiday == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	</table>
+</div>
+
+
+	<div class="w3-half w3-padding">
+	<table class="tg w3-table w3-bordered">
+
+	<tr class="w3-darker-grey" >
+	<td class="t70">
+		<h2>Booked Session</h2>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Booked_Date_and_Start_Time.toString().isEmpty())
+			{
+				%>
+<%=thisapp.whatDayIsIt(chBookings.Booked_Date_and_Start_Time)%>,&nbsp<%=chBookings.Booked_Date_and_Start_Time%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	<td >
+			
+
+	</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Booked Duration (h): 
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Charged_Duration.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Charged_Duration%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+		Free Entitlement:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Booked_Session_Free_Entitlement.isEmpty())
+			{
+				%>
+<%=chBookings.Booked_Session_Free_Entitlement%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+		Holiday: 
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Holiday.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Holiday == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Holiday == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+		Cancel Booking:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Cancelled_Booking.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Cancelled_Booking == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Cancelled_Booking == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+		Is Settling in Session: 
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Settling_in_session.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Settling_in_session == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Settling_in_session == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+		Apply Surcharge:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(chBookings.Apply_Surcharge.toString().isEmpty())
+			{
+				%>
+No Data @
+<%
+			}
+			else if(chBookings.Apply_Surcharge == true)
+			{
+				%>
+Yes
+<%
+			}
+			else if(chBookings.Apply_Surcharge == false)
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+		Actual Attendance:  
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Actual_Date_and_Start_Time.toString().isEmpty())
+			{
+				%>
+<%=thisapp.whatDayIsIt(chBookings.Actual_Date_and_Start_Time)%>,&nbsp<%=chBookings.Actual_Date_and_Start_Time%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	
+	</table>
+	</div>	
+	</div>
+
+<!-- 3 row -->
+<div class="">
+	<div class="w3-half w3-padding">
+	<table class="tg w3-table w3-bordered">
+
+	<tr class="w3-darker-grey">
+	<td class="t70">
+		Pre-Booked Service Charges: 
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Pre_Booked_Booking_Charge.isEmpty())
+			{
+				%>
+<%=chBookings.Pre_Booked_Booking_Charge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+
+	</table>
+</div>
+
+
+	<div class="w3-half w3-padding">
+	<table class="w3-table w3-bordered">
+
+	<tr class="w3-darker-grey">
+	<td class="t60">
+		Charged Duration:
+	</td>
+	<td >
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Charged_Duration.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Charged_Duration%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-light-grey">
+	<td>
+		Childcare Charge: 
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Childcare_Charge.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Childcare_Charge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+Unscheduled Childcare:
+	</td>
+	<td>
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Booked_Session_Unscheduled_Childcare_Duration.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Booked_Session_Unscheduled_Childcare_Duration%>&nbsp minutes
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+		Unscheduled Charge: 
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Unscheduled_Charge.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Unscheduled_Charge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+		Away Discount:
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Away_Discount.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Away_Discount%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/****** end of the Childcare_Bookings loop *******/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+		Billing Discount: 
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Billing_Discount.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Billing_Discount%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+
+	<tr class="w3-darker-grey">
+	<td>
+TTO Surcharge: 
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.TTO_Surcharge.toString().isEmpty())
+			{
+				%>
+<%=chBookings.TTO_Surcharge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+	<tr class="w3-light-grey">
+	<td>
+Late Change Surcharge
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Late_Change_Surcharge.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Late_Change_Surcharge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td></tr>
+	<tr class="w3-darker-grey">
+	<td>
+Total Childcare Charge:
+	</td>
+	<td>&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!chBookings.Total_Childcare_Charge.toString().isEmpty())
+			{
+				%>
+<%=chBookings.Total_Childcare_Charge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+	</tr>
+</table>
+<%
+		}
+	}
+	else
+	{
+		%>
+<h2>There is no records</h2>
+<%
+	}
+	/******************************************************************************************************************************************************/
+	/********************************************************************** end of the Childcare_Bookings loop ********************************************/
+	/******************************************************************************************************************************************************/
+	// 	childRec=Child[ID==input.Childcare_Bookings.Child_Name];
+	// input.Child_Name=fet.Child_Name;
+	// 	childcareServiceBooking = Childcare_Service_Booking.childcareBooking;
+	childcareServiceBooking = Childcare_Service_Booking[Childcare_Bookings.Child_Name == input.param.toLong()];
+	if(childcareServiceBooking.count() > 0)
+	{
+		/*&&!childcareBookings.isEmpty()*/
+		/********* beginning of Childcare_Service_Booking loop *********/
+		for each  csBooking in childcareServiceBooking
+		{
+			chServiceBooking = Childcare_Service_Booking[ID == csBooking.ID];
+			serviceType = chServiceBooking.Booked_Service.Childcare_Services;
+			serviceCharge = chServiceBooking.Booked_Service_Charge;
+			// 			serviceType = chServiceBooking.Booked_Service;
+			// childName = Child[ID == booking.Child_Name];
+			// setting = Childcare_Settings[ID == booking.Childcare_Settings];
+			// chBookings = Childcare_Bookings[ID == booking];
+			%>
+<table  class="w3-table w3-bordered">
+<tr>
+<td class="t60">Service Charges: </td>
+
+</tr>
+<tr class="t60">
+<th>Service Type	
+</th>
+<th>Service Charge	
+</th>
+
+</tr>
+<tr class="w3-darker-grey">
+<td >
+<%
+			/************* Begin of if  Statement *************/
+			if(!serviceType.isEmpty())
+			{
+				%>
+<%=serviceType%>
+<%
+			}
+			else
+			{
+				%>
+No Data
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+<td >&#163;
+<%
+			/************* Begin of if  Statement *************/
+			if(!serviceCharge.isEmpty())
+			{
+				%>
+<%=serviceCharge%>
+<%
+			}
+			else
+			{
+				%>
+0*
+<%
+			}
+			/************* End of if  Statement *************/
+			%>
+</td>
+
+</tr>
+</table>
+<%
+		}
+	}
+	childcareBookings = Childcare_Bookings[Child_Name == input.param.toLong()];
+	if(childcareBookings.count() > 0)
+	{
+	}
+	/********* beginning of Childcare_Bookings loop *********/
+	for each  booking in childcareBookings
+	{
+		chBookings = Childcare_Bookings[ID == booking];
+		%>
+<table  class="w3-table w3-bordered">
+<tr class="w3-light-grey">
+<td class="t60">
+Booking Charge: 
+</td>
+<td class="t60 ">
+			&#163;
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.Booking_Charge.isEmpty())
+		{
+			%>
+<%=chBookings.Booking_Charge%>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+<tr class="w3-darker-grey">
+<td>
+Bill Adjustmnet: 
+</td>
+<td class="">
+			&#163;
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.Billing_Adjustment.isEmpty())
+		{
+			%>
+<%=chBookings.Billing_Adjustment%>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+	</table>
+
+	</div>	
+	</div>
+
+<div class="w3-row-padding w3-padding">
+<table  class="w3-table w3-bordered w3-padding">
+<tr class="w3-light-grey">
+<td class="t510">Pre-Booked FE Charge:</td><td class="t510">&#163;
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.Pre_Booked_FE_Charge_Recovery.isEmpty())
+		{
+			%>
+<%=chBookings.Pre_Booked_FE_Charge_Recovery%>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+<tr class="w3-darker-grey ">
+<td class="t510">FE Charge: 
+</td><td class=""> &#163;
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.FE_Charge.isEmpty())
+		{
+			%>
+<%=chBookings.FE_Charge%>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+<tr class="w3-light-grey">
+<td>FE Adjustment:</td><td class="">&#163;
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.FE_Adjustment.isEmpty())
+		{
+			%>
+<%=chBookings.FE_Adjustment%></td>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</tr>
+<tr class="w3-darker-grey">
+<td>Account Suspended:</td><td>
+<%
+		/************* Begin of if  Statement *************/
+		if(chBookings.Account_Suspended == true)
+		{
+			%>
+Yes
+<%
+		}
+		else
+		{
+			%>
+No
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+<tr class="w3-light-grey">
+<td>Pricing Category:</td><td>
+<%
+		/************* Begin of if  Statement *************/
+		if(!chBookings.Booked_Session_Pricing_Category.isEmpty())
+		{
+			%>
+<%=chBookings.Booked_Session_Pricing_Category%>
+<%
+		}
+		else
+		{
+			%>
+0*
+<%
+		}
+		/************* End of if  Statement *************/
+		%>
+</td>
+</tr>
+</table>
+*No Data
+<%
+	}
+	%>
+</div>
+	<!--close div container-->
+	</div>
+
+	
+
+
+
+</body>
+<%
+
+}%>

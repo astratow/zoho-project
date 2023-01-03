@@ -1,0 +1,121 @@
+<%{
+	%>
+	<!DOCTYPE html5>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<h2>Parents/Guardians/Contacts</h2>
+<%
+	/*sets up logged in person as Parent_Administrator*/
+	parentLogin = Child[Parent_Administrator == zoho.loginuser];
+	children = Child[ID in parentLogin];
+	if(children.Child_Contacts.tostring() != "" && children.Child_Contacts != null && children.Child_Contacts.tostring() != "null")
+	{
+		for each  contact in children.Child_Contacts
+		{
+			%>
+<table class="w3-table w3-bordered" >
+<thead class="table-head w3-teal" >
+    
+
+<!-- contact full name and contact info -->
+    <th class="tg-0lax">Full Name:</th><th>
+<%
+			if(contact.Name.toString() != "")
+			{
+				%>
+<%=contact.Name%>
+<%
+			}
+			else
+			{
+				%>
+No Contact Details Entered
+<%
+			}
+			%>
+</th>
+</thead>
+<tbody>
+
+<!-- contact relationship to the child -->
+
+<tr class="w3-hover-blue  w3-lime "><td>Relationship:</td><td>
+<%
+			if(contact.Relationship.toString() != "")
+			{
+				%>
+<%=contact.Relationship%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-khaki "><td>Is Emergency Contact?:</td><td>
+<%
+			if(contact.Mobile_Phone_Number != "")
+			{
+				%>
+Yes
+<%
+			}
+			else
+			{
+				%>
+No
+<%
+			}
+			%>
+</td></tr>
+
+<!-- contact mobile phone number -->
+
+<tr class="w3-hover-blue  w3-lime "><td>Mobile Phone:</td><td>
+<%
+			if(contact.Mobile_Phone_Number != "")
+			{
+				%>
+<%=contact.Mobile_Phone_Number%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+		}
+	}
+	else
+	{
+		%>
+Contact Details Not Entered
+<%
+	}
+	%>
+</td></tr>
+</tbody>
+</table>
+<br>
+<style type="text/css">
+<!-- Basic styling for the table -->/*
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;background:#1abc9c;color:#fff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;font-style:italic;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}*/
+</style>
+<%
+
+}%>

@@ -1,0 +1,51 @@
+string timeSubstract(string start_time, string end_time)
+{
+	// 	function takes two time strings format HH:mm and returns time difference in string format.
+	/********************************/
+	/**** start time preparation:****/
+	/** splitting hour and minutes **/
+	/********************************/
+	// 	start_hours = start_time.getPrefix(":").toNumber();
+	// 	end_hours = end_time.getPrefix(":").toNumber();
+	// 	if(start_hours >= end_hours)
+	// 	{
+	// 		info "Error. You can't start after you finished.";
+	// 	}
+	startTime = toTime(zoho.currentdate + " " + start_time);
+	// 	start_minutes = start_time.getSuffix(":").toNumber();
+	/********************************/
+	/**** end time preparation: *****/
+	/* splitting hour and minutes ***/
+	/********************************/
+	endTime = toTime(zoho.currentdate + " " + end_time);
+	// 	end_minutes = end_time.getSuffix(":").toNumber();
+	// 	if(start_hours > end_hours)
+	// 	{
+	// 		return "Error. You can't start after you finished.";
+	// 	}
+	/********************************/
+	/*** calculating duration time **/
+	/********************************/
+	duration_time = startTime.timeBetween(endTime);
+	lis = duration_time.toList(":");
+	lis = lis.get(0).leftPad(2).replaceAll(" ","0") + ":" + lis.get(1).leftPad(2).replaceAll(" ","0");
+	duration_time = lis.toString();
+	// 	end_minutes - start_minutes;
+	/*****************************************/
+	/* ensuring accurate minutes calculation */
+	/*****************************************/
+	/*	if(duration_minutes < 0)
+	{
+		duration_minutes = duration_minutes + 60;
+		duration_hours = end_hours - start_hours - 1;
+	}
+	else
+	{
+		duration_hours = end_hours - start_hours;
+	}*/
+	/*************************************/
+	/* preparing result in string format */
+	/*************************************/
+	// 	duration_time = duration_hours.toString() + ":" + duration_minutes.toString();
+	return duration_time;
+}

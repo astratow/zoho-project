@@ -1,0 +1,25 @@
+void zoho_test()
+{
+	Bookings = Childcare_Bookings[Child_Name == 4284139000000202015];
+	info Bookings;
+	info Bookings.Child_Name;
+	if(Bookings.count() > 0)
+	{
+		for each  booking in Bookings
+		{
+			info booking.Child_Name;
+			childName = Child[ID == booking.Child_Name];
+			info childName;
+			setting = Childcare_Settings[ID == booking.Childcare_Settings];
+			chBooking = Childcare_Bookings[ID == booking];
+			if(chBooking.Pre_Booked_Date_and_Start_Time == chBooking.Booked_Date_and_Start_Time && chBooking.Pre_Booked_Date_and_End_Time == chBooking.Booked_Date_and_End_Time)
+			{
+				info chBooking.Pre_Booked_Date_and_Start_Time;
+			}
+			else
+			{
+				info "-not-pre-booked";
+			}
+		}
+	}
+}

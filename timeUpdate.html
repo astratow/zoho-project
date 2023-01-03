@@ -1,0 +1,72 @@
+void timeSubstract1()
+{
+	// 	function takes updates details so timeSubstract() can work properly and display Duration fields
+	// 	In order to work, it needs to have only one uncommented set of values to run.
+	// 	Function has been developed by Helin Asmiya
+	/********************************/
+	/**** start time preparation:****/
+	/** splitting hour and minutes **/
+	/********************************/
+	// 		var = Child_Booking_Profile[ID != 0];
+	for each  var in Child_Booking_Profile
+	{
+		// 		start_time = var.Monday_Session_Start_Time.toString();
+		// 		end_time = var.Monday_Session_End_Time.toString();
+		// 		start_time = var.Tuesday_Session_Start_Time.toString();
+		// 		end_time = var.Tuesday_Session_End_Time.toString();
+		// 		start_time = var.Wednesday_Session_Start_Time.toString();
+		// 		end_time = var.Wednesday_Session_End_Time.toString();
+		// 		start_time = var.Thursday_Session_Start_Time.toString();
+		// 		end_time = var.Thursday_Session_End_Time.toString();
+		start_time = var.Friday_Session_Start_Time.toString();
+		end_time = var.Friday_Session_End_Time.toString();
+		//start_hours = start_time.getPrefix(":").toNumber();
+		//end_hours = end_time.getPrefix(":").toNumber();
+		// 	if(start_hours >= end_hours)
+		// 	{
+		// 		info "Error. You can't start after you finished.";
+		// 	}
+		startTime = toTime(zoho.currentdate + " " + start_time);
+		// 	info startTime;
+		// 	start_minutes = start_time.getSuffix(":").toNumber();
+		/********************************/
+		/**** end time preparation: *****/
+		/* splitting hour and minutes ***/
+		/********************************/
+		endTime = toTime(zoho.currentdate + " " + end_time);
+		// 	info endTime;
+		// 	end_minutes = end_time.getSuffix(":").toNumber();
+		// 	if(start_hours > end_hours)
+		// 	{
+		// 		return "Error. You can't start after you finished.";
+		// 	}
+		/********************************/
+		/*** calculating duration time **/
+		/********************************/
+		duration_time = startTime.timeBetween(endTime);
+		// 		var.Monday_Duration=duration_time;
+		// 		var.Tuesday_Duration=duration_time;
+		// 		var.Wednesday_Duration=duration_time;
+		// 		var.Thursday_Duration=duration_time;
+		var.Friday_Duration=duration_time;
+	}
+	// 	info var.Monday_Duration;
+	// 	end_minutes - start_minutes;
+	/*****************************************/
+	/* ensuring accurate minutes calculation */
+	/*****************************************/
+	/*	if(duration_minutes < 0)
+	{
+		duration_minutes = duration_minutes + 60;
+		duration_hours = end_hours - start_hours - 1;
+	}
+	else
+	{
+		duration_hours = end_hours - start_hours;
+	}*/
+	/*************************************/
+	/* preparing result in string format */
+	/*************************************/
+	// 	duration_time = duration_hours.toString() + ":" + duration_minutes.toString();
+	//return duration_time;
+}

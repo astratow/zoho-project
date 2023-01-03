@@ -1,0 +1,19 @@
+list parentChildFilter()
+{
+	parentAdmin = Child[Parent_Administrator == zoho.loginuserid];
+	children = List();
+	for each  child in parentAdmin
+	{
+		children.add(child.ID);
+	}
+	if(children.isEmpty())
+	{
+		info "it is empty";
+		return children;
+	}
+	else
+	{
+		info "its full";
+		return children;
+	}
+}

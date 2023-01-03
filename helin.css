@@ -1,0 +1,117 @@
+Kindly refer to the below script to wherein this script is used to build a HTML table using the CSS style of the records in the form
+
+<%{
+
+fet = <form_link_name>[criteria].<subform_link_name>;
+
+numberlist = fet.<Date_field_link_name>.getall();
+
+Singlelinelist = fet.<Single_Line_field_link_name>.getall();
+
+sortednumberlist = numberlist;
+
+newlis = sortednumberlist.sort();
+
+sortedsinglelinelist = List();
+
+i=0;
+
+for each rec in newlis
+
+{
+
+indexvalue = numberlist.IndexOf(rec);
+
+sortedsinglelinelist.add(Singlelinelist.get(indexvalue));
+
+numberlist.remove(indexvalue);
+
+}
+
+%>
+
+<head>
+
+<style>
+
+table {
+
+border: 1px solid black;
+
+border-collapse: collapse;
+
+width: 100%;
+
+}
+
+
+
+th, td {
+
+border: 1px solid black;
+
+text-align: left;
+
+padding: 8px;
+
+}
+
+
+
+tr:nth-child(even) {
+
+background-color: #f2f2f2;
+
+}
+
+th {
+
+background-color: #04AA6D;
+
+color: white;
+
+}
+
+</style>
+
+</head>
+
+<table>
+
+<tr>
+
+<th>Single Line</th>
+
+<th>Date</th>
+
+</tr>
+
+<%
+
+for each  var in fet
+
+{
+
+%>
+
+<tr>
+
+<td><%=sortedsinglelinelist.get(i)%></td>
+
+<td><%=newlis.get(i)%></td>
+
+</tr>
+
+<%
+
+i = i+1;
+
+}
+
+%>
+
+</table>
+
+<%
+
+}%>

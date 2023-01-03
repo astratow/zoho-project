@@ -1,0 +1,46 @@
+numbersList = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+
+total = 0;
+
+for each number in all_numers {
+	multi_5 = number % 5 == 0;
+	multi_3 = number % 3 == 0;
+	if(number <= input.Max_Number && (multi_5 || multi_3){
+		total = total + number;
+	}
+}
+
+alert total;
+cancel submit;
+////////////////////////////////////////////////////////////////////
+///////////////////// Priya solution ///////////////////////////////
+////////////////////////////////////////////////////////////////////
+total = 0;
+
+product = 1;
+
+numlist = ",".leftpad(input.Number).toList("");
+
+info numlist;
+
+for each index i in numlist
+
+{
+
+if(input.Choice == "Sum")
+
+{
+
+total = total + i;
+
+info total;
+
+}else if (input.Choice == "Product"){
+
+product = product*i;
+
+info product;
+
+}
+
+}

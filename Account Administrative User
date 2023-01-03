@@ -1,0 +1,129 @@
+<%{
+	%>
+<!DOCTYPE html5>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<%
+	parentLogin = Child[Parent_Administrator == zoho.loginuser];
+	children = Child[ID in parentLogin];
+	if(children.toString() != "" && children != null && children.toString() != "null")
+	{
+		for each  child in children
+		{
+			%>
+<table class="w3-table w3-bordered" >
+<thead class="table-head w3-teal" >
+    <th>
+	Child's Forename:<br>
+	Child's Surname:
+<%
+			if(child.Child_Name.first_name != "" && child.Child_Name.last_name != "")
+			{
+				%>
+</th>
+<th class="tg-0lax"><%=child.Child_Name.first_name%><br><%=child.Child_Name.last_name%></th>
+<%
+			}
+			else
+			{
+				%>
+<th class="tg-0lax">Name: </th>
+	<th class="tg-0lax"> Error! No Name Entered! </th>
+<%
+			}
+			%>
+</thead>
+<tbody>
+<tr><td>Account Administrative User:</td><td>
+<%
+			if(child.Parent_Administrator != "" && child.Parent_Administrator != null)
+			{
+				%>
+<%=child.Parent_Administrator%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr><td>Billing contact name:</td><td>
+<%
+			if(child.Billing_Contact_Name != null && child.Billing_Contact_Name.toString() != "")
+			{
+				%>
+<%=child.Billing_Contact_Name%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr><td>Billing email address:</td><td>
+<%
+			if(child.Billing_email_address != null && child.Billing_email_address != "")
+			{
+				%>
+<%=child.Billing_email_address%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr><td>Email Opt-In:</td><td>
+<%
+			if(child.eMail_Opt_in != null && child.eMail_Opt_in.toString() != "")
+			{
+				%>
+<%=child.eMail_Opt_in%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+</tbody>
+</table>
+	<br>	
+<style type="text/css">
+/*
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;background:#1abc9c;color:#fff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;font-style:italic;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+*/</style>
+<%
+		}
+	}
+	else
+	{
+		%>
+<h2>error</h2>
+<%
+	}
+
+}%>

@@ -1,0 +1,33 @@
+void tester()
+{
+	fett = Child[ID != 0];
+	i = 0;
+	lis = List();
+	for each  rec in fett
+	{
+		for each  x in rec.Child_Contacts
+		{
+			if(x.Name.isEmpty() == true)
+			{
+				i = i + 1;
+				lis.add(rec.ID);
+				info "Name is empty " + rec.ID;
+			}
+			else if(x.Mobile_Phone_Number.isEmpty() == true)
+			{
+				info "Mobile Phone number is empty " + rec.ID;
+				lis.add(rec.ID);
+			}
+			else if(x.Relationship.isEmpty() == true)
+			{
+				info "relationship is empty " + rec.ID;
+				lis.add(rec.ID);
+			}
+		}
+	}
+	//info i;
+	info lis.distinct();
+	info lis.size();
+	// 42841390000000200072
+	// 4284139000000020007,4284139000000041011
+}
