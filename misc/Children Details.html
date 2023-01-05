@@ -1,0 +1,148 @@
+<%{
+	%>
+<!DOCTYPE html5>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<%
+	parentLogin = Child[Parent_Administrator == zoho.loginuser];
+	children = Child[ID in parentLogin];
+	if(children.toString() != "" && children != null && children.toString() != "null")
+	{
+		for each  child in children
+		{
+			%>
+<!-- Children Details Table-->
+<table class="w3-table w3-bordered" >
+<thead class="table-head w3-teal" >
+    <th class="tg-0lax">
+	Child's Forename:<br>
+	Child's Surname:
+<%
+			if(child.Child_Name.first_name != "" && child.Child_Name.last_name != "")
+			{
+				%>
+</th>
+<th class="tg-0lax"><%=child.Child_Name.first_name%><br><%=child.Child_Name.last_name%></th>
+<%
+			}
+			else
+			{
+				%>
+<th class="tg-0lax">Name: </th>
+	<th class="tg-0lax"> Error! No Name Entered! </th>
+<%
+			}
+			%>
+</thead>
+<tbody>
+<!-- Children Details -->
+<tr class="w3-hover-blue  w3-lime">
+<td>
+Gender:</td><td>
+<%
+			if(child.Child_Gender != "" && child.Child_Gender != null)
+			{
+				%>
+<%=child.Child_Gender%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-khaki"><td>Date of Birth:</td><td>
+<%
+			if(child.Child_DateofBirth != null && child.Child_DateofBirth.toString() != "")
+			{
+				%>
+<%=child.Child_DateofBirth%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td>
+</tr>
+<tr class="w3-hover-blue  w3-lime"><td>Known As:</td><td>
+<%
+			if(child.Known_As != null && child.Known_As != "")
+			{
+				%>
+<%=child.Known_As%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-khaki"><td>Syblings:</td><td>
+<%
+			if(child.Child_Siblings != null && child.Child_Siblings != "")
+			{
+				%>
+<%=child.Child_Siblings%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-lime"><td>Religion:</td><td>
+<%
+			if(child.Child_Religion != null && child.Child_Religion != "")
+			{
+				%>
+<%=child.Child_Religion%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr></table>
+<br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;background:#1abc9c;color:#fff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;font-style:italic;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<%
+		}
+	}
+	else
+	{
+		%>
+<h2>error</h2>
+<%
+	}
+
+}%>

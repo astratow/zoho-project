@@ -1,0 +1,22 @@
+Fetching data - guide
+
+I will follow the below approach to check the related field data.
+
+1) Aware of the input based on which the data should be fetched. In our case, it is a Child form's record ID
+2) Check the source form to see if there is any direct lookup field available. In our case, there is no direct lookup field present in the form.
+3) As a next step, I would see the available lookup fields in the source form and see if the Child Record can be filtered through the lookup field's related field
+	
+	childcareServiceBooking = Childcare_Service_Booking[Childcare_Bookings.Child_Name == input.ID.toLong()];
+	if(childcareServiceBooking.count() > 0)
+	{
+		/*&&!childcareBookings.isEmpty()*/
+		/********* beginning of Childcare_Service_Booking loop *********/
+		for each  csBooking in childcareServiceBooking
+		{
+			chServiceBooking = Childcare_Service_Booking[ID == csBooking.ID];
+			serviceType = chServiceBooking.Booked_Service;
+
+			%>
+
+
+<%=serviceType%>

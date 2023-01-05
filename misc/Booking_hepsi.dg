@@ -1,0 +1,168 @@
+<%{
+	childRec = Child[Parent_Administrator == zoho.loginuser].Child_Register.getAll();
+	chNamelist = Child_Name[ID in childRec].ID.getAll();
+	for each  rec in childRec
+	{
+		chName = Child_Name[ID == rec];
+		fetCBP2 = Child_Booking_Profile[Child_Name == rec];
+		if(fetCBP2.count() == 0)
+		{
+			%>
+<h1>There is no booking records for <%=chName.Child_Register%>  </h1>
+<%
+		}
+		else
+		{
+			%>
+<h1><%=chName.Child_Register%></h1>
+<%
+			// 	Monday
+			bookings_Monday = Child_Booking_Profile[Show_Monday_booking != null && Child_Name == rec];
+			setting_Monday = bookings_Monday.Monday_Childcare_Setting.toString();
+			start_Monday = bookings_Monday.Monday_Session_Start_Time.toString();
+			end_Monday = bookings_Monday.Monday_Session_End_Time.toString();
+			duration_Monday = thisapp.timeSubstract(start_Monday,end_Monday);
+			fe_Monday = bookings_Monday.Monday_Free_Entitlement.toString();
+			status_Monday = bookings_Monday.Monday_Status.toString();
+			holiday_Monday = bookings_Monday.Monday_Holiday.toString();
+			cancel_Monday = bookings_Monday.Monday_Cancel.toString();
+			// 	Tuesday
+			bookings_Tuesday = Child_Booking_Profile[Show_Tuesday_booking != null && Child_Name == rec];
+			start_Tuesday = bookings_Tuesday.Tuesday_Session_Start_Time.toString();
+			end_Tuesday = bookings_Tuesday.Tuesday_Session_End_Time.toString();
+			duration_Tuesday = thisapp.timeSubstract(start_Tuesday,end_Tuesday);
+			fe_Tuesday = bookings_Tuesday.Tuesday_Free_Entitlement.toString();
+			status_Tuesday = bookings_Tuesday.Tuesday_Status.toString();
+			holiday_Tuesday = bookings_Tuesday.Tuesday_Holiday.toString();
+			cancel_Tuesday = bookings_Tuesday.Tuesday_Cancel.toString();
+			// 	Wednesday
+			bookings_Wednesday = Child_Booking_Profile[Show_Wednesday_booking != null && Child_Name == rec];
+			start_Wednesday = bookings_Wednesday.Wednesday_Session_Start_Time.toString();
+			end_Wednesday = bookings_Wednesday.Wednesday_Session_End_Time.toString();
+			duration_Wednesday = thisapp.timeSubstract(start_Wednesday,end_Wednesday);
+			fe_Wednesday = bookings_Wednesday.Wednesday_Free_Entitlement.toString();
+			status_Wednesday = bookings_Wednesday.Wednesday_Status.toString();
+			holiday_Wednesday = bookings_Wednesday.Wednesday_Holiday.toString();
+			cancel_Wednesday = bookings_Wednesday.Wednesday_Cancel.toString();
+			// 	 Thursday
+			bookings_Thursday = Child_Booking_Profile[Show_Thursday_booking != null && Child_Name == rec];
+			start_Thursday = bookings_Thursday.Thursday_Session_Start_Time.toString();
+			end_Thursday = bookings_Thursday.Thursday_Session_End_Time.toString();
+			duration_Thursday = thisapp.timeSubstract(start_Thursday,end_Thursday);
+			fe_Thursday = bookings_Thursday.Thursday_Free_Entitlement.toString();
+			status_Thursday = bookings_Thursday.Thursday_Status.toString();
+			holiday_Thursday = bookings_Thursday.Thursday_Holiday.toString();
+			cancel_Thursday = bookings_Thursday.Thursday_Cancel.toString();
+			// 	Friday
+			bookings_Friday = Child_Booking_Profile[Show_Friday_booking != null && Child_Name == rec];
+			start_Friday = bookings_Friday.Friday_Session_Start_Time.toString();
+			end_Friday = bookings_Friday.Friday_Session_End_Time.toString();
+			duration_Friday = thisapp.timeSubstract(start_Friday,end_Friday);
+			fe_Friday = bookings_Friday.Friday_Free_Entitlement.toString();
+			status_Friday = bookings_Friday.Friday_Status.toString();
+			holiday_Friday = bookings_Friday.Friday_Holiday.toString();
+			cancel_Friday = bookings_Friday.Friday_Cancel.toString();
+			// 	variables
+			dateToday = zoho.currentdate.toString("dd MMMM yyyy");
+			dayToday = today.toString("EEEE");
+			booking_info = Child_Booking_Profile[Show_basic_booking_information != null && Child_Name == rec];
+			%>
+<!-- comment -->
+<h2>Booking Profile</h2>
+<table style="width:100%">
+  <tr>
+    <th>Booked Sessions</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>
+<h6>Monday</h6>
+	Session:&nbsp<%=start_Monday%> to <%=end_Monday%>
+	<br>
+	Duration:&nbsp<%=duration_Monday%>
+	<br>
+	Free Entitlement:&nbsp<%=fe_Monday%>
+	</td>
+    <td>
+		Status:&nbsp<%=status_Monday%><br>
+		Holiday:&nbsp<%=holiday_Monday%><br>
+		Cancel:&nbsp<%=cancel_Monday%><br>
+	</td>
+    
+  </tr>
+   <tr>
+    <td>
+<h6>Tuesday</h6>
+	Session:&nbsp<%=start_Tuesday%> to <%=end_Tuesday%>
+	<br>
+	Duration: <%=duration_Tuesday%>
+	<br>
+	Free Entitlement: 
+	</td>
+   <td>
+		Status:&nbsp<%=status_Tuesday%><br>
+		Holiday:&nbsp<%=holiday_Tuesday%><br>
+		Cancel:&nbsp<%=cancel_Tuesday%><br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Wednesday</h6>
+	Session:&nbsp<%=start_Wednesday%> to <%=end_Wednesday%>
+	<br>
+	Duration: <%=duration_Wednesday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status:&nbsp<%=status_Wednesday%><br>
+		Holiday:&nbsp<%=holiday_Wednesday%><br>
+		Cancel:&nbsp<%=cancel_Wednesday%><br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Thursday</h6>
+	Session:&nbsp<%=start_Thursday%> to <%=end_Thursday%>
+	<br>
+	Duration: <%=duration_Thursday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status:&nbsp<%=status_Thursday%><br>
+		Holiday:&nbsp<%=holiday_Thursday%><br>
+		Cancel:&nbsp<%=cancel_Thursday%><br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Friday</h6>
+	Session:&nbsp<%=start_Friday%> to <%=end_Friday%>
+	<br>
+	Duration: <%=duration_Friday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status:&nbsp<%=status_Friday%><br>
+		Holiday:&nbsp<%=holiday_Friday%><br>
+		Cancel:&nbsp<%=cancel_Friday%><br>
+	</td>
+    
+  </tr>
+</table>
+<h2>
+</h2>
+<%
+		}
+	}
+
+}%>
+input.Tuesday_Duration = thisapp.timeSubstract(input.Tuesday_Session_Start_Time.toString(),input.Tuesday_Session_End_Time.toString());
+input.Wednesday_Duration = thisapp.timeSubstract(input.Wednesday_Session_Start_Time.toString(),input.Wednesday_Session_End_Time.toString());
+input.Thursday_Duration = thisapp.timeSubstract(input.Thursday_Session_Start_Time.toString(),input.Thursday_Session_End_Time.toString());
+input.Friday_Duration = thisapp.timeSubstract(input.Friday_Session_Start_Time.toString(),input.Friday_Session_End_Time.toString());

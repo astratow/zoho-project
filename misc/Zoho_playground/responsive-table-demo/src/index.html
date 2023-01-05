@@ -1,0 +1,533 @@
+<%{%>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+  <%
+	childRec = Child[Parent_Administrator == zoho.loginuser].Child_Register.getAll();
+	chNamelist = Child_Name[ID in childRec].ID.getAll();
+	for each  rec in chNamelist
+	{
+		chName = Child_Name[ID == rec];
+		fetCBP2 = Child_Booking_Profile[Child_Name == rec];
+		if(fetCBP2.count() == 0)
+		{
+			%>
+<h1>There is no booking records for <%=chName.Child_Register%>  </h1>
+<%
+		}
+		else
+		{
+			%>
+<h1><%=chName.Child_Register%></h1>
+<%
+			/*********** Variables for each day, pulled from the fields ********************************************/
+			// 	Monday
+			bookings_Monday = Child_Booking_Profile[Show_Monday_booking != null && Child_Name == rec];
+			setting_Monday = bookings_Monday.Monday_Childcare_Setting.Setting_Name.toString();
+			enable_Monday = bookings_Monday.Monday_Enable_Day.toString();
+			start_Monday = bookings_Monday.Monday_Session_Start_Time.toString();
+			end_Monday = bookings_Monday.Monday_Session_End_Time.toString();
+			duration_Monday = thisapp.timeSubstract(start_Monday,end_Monday);
+			fe_Monday = bookings_Monday.Monday_Free_Entitlement.toString();
+			status_Monday = bookings_Monday.Monday_Status.toString();
+			holiday_Monday = bookings_Monday.Monday_Holiday.toString();
+			cancel_Monday = bookings_Monday.Monday_Cancel.toString();
+			// 	Tuesday
+			bookings_Tuesday = Child_Booking_Profile[Show_Tuesday_booking != null && Child_Name == rec];
+			setting_Tuesday = bookings_Tuesday.Tuesday_Childcare_Setting.Setting_Name.toString();
+			enable_Tuesday = bookings_Tuesday.Tuesday_Enable_Day.toString();
+			start_Tuesday = bookings_Tuesday.Tuesday_Session_Start_Time.toString();
+			end_Tuesday = bookings_Tuesday.Tuesday_Session_End_Time.toString();
+			duration_Tuesday = thisapp.timeSubstract(start_Tuesday,end_Tuesday);
+			fe_Tuesday = bookings_Tuesday.Tuesday_Free_Entitlement.toString();
+			status_Tuesday = bookings_Tuesday.Tuesday_Status.toString();
+			holiday_Tuesday = bookings_Tuesday.Tuesday_Holiday.toString();
+			cancel_Tuesday = bookings_Tuesday.Tuesday_Cancel.toString();
+			// 	Wednesday
+			bookings_Wednesday = Child_Booking_Profile[Show_Wednesday_booking != null && Child_Name == rec];
+			setting_Wednesday = bookings_Wednesday.Wednesday_Childcare_Setting.Setting_Name.toString();
+			enable_Wednesday = bookings_Wednesday.Wednesday_Enable_Day.toString();
+			start_Wednesday = bookings_Wednesday.Wednesday_Session_Start_Time.toString();
+			end_Wednesday = bookings_Wednesday.Wednesday_Session_End_Time.toString();
+			duration_Wednesday = thisapp.timeSubstract(start_Wednesday,end_Wednesday);
+			fe_Wednesday = bookings_Wednesday.Wednesday_Free_Entitlement.toString();
+			status_Wednesday = bookings_Wednesday.Wednesday_Status.toString();
+			holiday_Wednesday = bookings_Wednesday.Wednesday_Holiday.toString();
+			cancel_Wednesday = bookings_Wednesday.Wednesday_Cancel.toString();
+			// 	 Thursday
+			bookings_Thursday = Child_Booking_Profile[Show_Thursday_booking != null && Child_Name == rec];
+			setting_Thursday = bookings_Thursday.Thursday_Childcare_Setting.Setting_Name.toString();
+			enable_Thursday = bookings_Thursday.Thursday_Enable_Day.toString();
+			start_Thursday = bookings_Thursday.Thursday_Session_Start_Time.toString();
+			end_Thursday = bookings_Thursday.Thursday_Session_End_Time.toString();
+			duration_Thursday = thisapp.timeSubstract(start_Thursday,end_Thursday);
+			fe_Thursday = bookings_Thursday.Thursday_Free_Entitlement.toString();
+			status_Thursday = bookings_Thursday.Thursday_Status.toString();
+			holiday_Thursday = bookings_Thursday.Thursday_Holiday.toString();
+			cancel_Thursday = bookings_Thursday.Thursday_Cancel.toString();
+			// 	Friday
+			bookings_Friday = Child_Booking_Profile[Show_Friday_booking != null && Child_Name == rec];
+			setting_Friday = bookings_Friday.Friday_Childcare_Setting.Setting_Name.toString();
+			enable_Friday = bookings_Friday.Friday_Enable_Day.toString();
+			start_Friday = bookings_Friday.Friday_Session_Start_Time.toString();
+			end_Friday = bookings_Friday.Friday_Session_End_Time.toString();
+			duration_Friday = thisapp.timeSubstract(start_Friday,end_Friday);
+			fe_Friday = bookings_Friday.Friday_Free_Entitlement.toString();
+			status_Friday = bookings_Friday.Friday_Status.toString();
+			holiday_Friday = bookings_Friday.Friday_Holiday.toString();
+			cancel_Friday = bookings_Friday.Friday_Cancel.toString();
+			// 	variables
+			dateToday = zoho.currentdate.toString("dd MMMM yyyy");
+			dayToday = today.toString("EEEE");
+			booking_info = Child_Booking_Profile[Show_basic_booking_information != null && Child_Name == rec];
+			%>
+<!-- comment -->
+<h2>Booking Profile</h2>
+<table role="table">
+  <thead role="rowgroup">
+    <tr role="row">
+      <th role="columnheader">Day of the Week</th>
+      <th role="columnheader">Enable Day</th>
+      <th role="columnheader">Start Time</th>
+      <th role="columnheader">End Time</th>
+      <th role="columnheader">Duration</th>
+      <th role="columnheader">Free Entitlement</th>
+      <th role="columnheader">Childcare Settings</th>
+     
+    </tr>
+  </thead>
+  <tbody role="rowgroup">
+    <tr role="row">
+      <td role="cell">Monday</td>
+      <td role="cell"><%
+        if(enable_Monday == "false" || enable_Monday == "")
+        {
+          %>
+  No
+  <%
+        }
+        else
+        {
+          %>
+  Yes
+  <%
+        }
+        %></td>
+      <td role="cell"><%
+			if(start_Monday != "")
+			{
+				%>
+<%=start_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(end_Monday != "")
+			{
+				%>
+<%=end_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%=duration_Monday%></td>
+      <td role="cell"><%
+			if(fe_Monday != "")
+			{
+				%>
+<%=fe_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(setting_Monday.toString() != "")
+			{
+				%>
+<%=setting_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+ 
+    </tr>
+    <tr role="row">
+      <td role="cell">Tuesday</td>
+      <td role="cell"><%
+			if(enable_Monday == "false" || enable_Monday == "")
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+Yes
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(start_Monday != "")
+			{
+				%>
+<%=start_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(end_Monday != "")
+			{
+				%>
+<%=end_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%=duration_Monday%></td>
+      <td role="cell">John Smith</td>
+      <td role="cell"><%
+			if(setting_Monday.toString() != "")
+			{
+				%>
+<%=setting_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Wednesday</td>
+      <td role="cell"><%
+			if(enable_Monday == "false" || enable_Monday == "")
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+Yes
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(start_Monday != "")
+			{
+				%>
+<%=start_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(end_Monday != "")
+			{
+				%>
+<%=end_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%=duration_Monday%></td>
+      <td role="cell"><%
+			if(fe_Monday != "")
+			{
+				%>
+<%=fe_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(setting_Monday.toString() != "")
+			{
+				%>
+<%=setting_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Thursday</td>
+      <td role="cell"><%
+			if(enable_Monday == "false" || enable_Monday == "")
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+Yes
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(start_Monday != "")
+			{
+				%>
+<%=start_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(end_Monday != "")
+			{
+				%>
+<%=end_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%=duration_Monday%></td>
+      <td role="cell"><%
+			if(fe_Monday != "")
+			{
+				%>
+<%=fe_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(setting_Monday.toString() != "")
+			{
+				%>
+<%=setting_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Friday</td>
+      <td role="cell"><%
+			if(enable_Monday == "false" || enable_Monday == "")
+			{
+				%>
+No
+<%
+			}
+			else
+			{
+				%>
+Yes
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(start_Monday != "")
+			{
+				%>
+<%=start_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(end_Monday != "")
+			{
+				%>
+<%=end_Monday%>
+<%
+			}
+			else
+			{
+				%>
+No Bookings
+<%
+			}
+			%></td>
+      <td role="cell"><%=duration_Monday%></td>
+      <td role="cell"><%
+			if(fe_Monday != "")
+			{
+				%>
+<%=fe_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+      <td role="cell"><%
+			if(setting_Monday.toString() != "")
+			{
+				%>
+<%=setting_Monday%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%></td>
+    </tr>
+  </tbody>
+</table>
+<style>
+  /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Day of the Week"; }
+		td:nth-of-type(2):before { content: "Enable Day"; }
+		td:nth-of-type(3):before { content: "Start Time"; }
+		td:nth-of-type(4):before { content: "End Time"; }
+		td:nth-of-type(5):before { content: "Duration"; }
+		td:nth-of-type(6):before { content: "Free Entitlement"; }
+		td:nth-of-type(7):before { content: "Childcare Settings"; }
+  }
+</style>
+  </body>
+  </html>
+<%
+		}
+	}
+
+}%>

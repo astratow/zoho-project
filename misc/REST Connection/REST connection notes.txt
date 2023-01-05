@@ -1,0 +1,46 @@
+REST Connection to portal
+
+Enabled via the drupal Services module and included REST server
+Documantation
+https://www.drupal.org/documentation/modules/services
+
+Process to establish a connection
+
+Set initail headers for JSON or XML
+Content-Type: application/json
+
+Get X-CSRF-Token
+POST https://devel.norto5.com/api-v1/user/token.json
+
+Result is a token for example
+{
+    "token": "7zJCq4OQSIfwyw3wv3Ykg-8HGTetT4ICrp-gLhBwEAM"
+}
+
+Set header
+X-CSRF-Token: <acquired token>
+
+Authenticate
+POST https://devel.norto5.com/api-v1/user/login.json
+Body:
+{
+  "username": "<username>",
+  "password": <password>"
+}
+
+Response with session ID
+{
+    "sessid": "d-Xz1I0MMe_0bdl9BZ49fsVz7ubtNvalJMORTKy6q-0",
+    "session_name": "SSESSa2b78fe65c3ddcd39102f5fe4f6d04de",
+    "token": "R8CHv8fVolcDFfD20xtRdHmb5-wpKtP9NR-jBIq6DYI",
+    "user": {
+        "uid": "1",
+        "name": "norto5.kidz",
+        ........
+        
+ Set Cookie header
+ Cookie: <session id from authentication>      
+
+Query Data
+Example
+GET https://devel.norto5.com/api-v1/node.json?parameters[type]=childcare_setting&parameters[status]=1

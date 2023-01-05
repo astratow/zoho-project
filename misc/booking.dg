@@ -1,0 +1,129 @@
+<%{
+	// 	replacement version 7.9
+	
+	// 		Monday
+	bookings_Monday = Child_Booking_Profile[Show_Monday_booking != null ];
+	start_Monday = bookings_Monday.Monday_Session_Start_Time.toString();
+	end_Monday = bookings_Monday.Monday_Session_End_Time.toString();
+	duration_Monday = thisapp.timeSubstract(start_Monday.getSuffix(":"),end_Monday.getSuffix(":"));
+	// 		Tuesday
+	bookings_Tuesday = Child_Booking_Profile[Show_Tuesday_booking != null];
+	start_Tuesday = bookings_Tuesday.Tuesday_Session_Start_Time;
+	end_Tuesday = bookings_Tuesday.Tuesday_Session_End_Time;
+	duration_Tuesday = thisapp.timeSubstract(start_Tuesday.getSuffix(":"),end_Tuesday.getSuffix(":"));
+	// 		Wednesday
+	bookings_Wednesday = Child_Booking_Profile[Show_Wednesday_booking != null];
+	start_Wednesday = bookings_Wednesday.Wednesday_Session_Start_Time;
+	end_Wednesday = bookings_Wednesday.Wednesday_Session_End_Time;
+	duration_Wednesday = thisapp.timeSubstract(start_Wednesday.getSuffix(":"),end_Wednesday.getSuffix(":"));
+	// 	 Thursday
+	bookings_Thursday = Child_Booking_Profile[Show_Thursday_booking != null];
+	start_Thursday = bookings_Thursday.Thursday_Session_Start_Time;
+	end_Thursday = bookings_Thursday.Thursday_Session_End_Time;
+	duration_Thursday = thisapp.timeSubstract(start_Thursday.getSuffix(":"),end_Thursday.getSuffix(":"));
+	// 	Friday
+	bookings_Friday = Child_Booking_Profile[Show_Friday_booking != null];
+	start_Friday = bookings_Friday.Friday_Session_Start_Time;
+	end_Friday = bookings_Friday.Friday_Session_End_Time;
+	duration_Friday = thisapp.timeSubstract(start_Friday.getSuffix(":"),end_Friday.getSuffix(":"));
+	dateToday = zoho.currentdate.toString("dd MMMM yyyy");
+	dayToday = today.toString("EEEE");
+	booking_info = Child_Booking_Profile[Show_basic_booking_information != null];
+	whoID = zoho.loginuserid;
+	%>
+<!-- comment -->
+<h2></h2>
+<h2><%=whoID%></h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Booked Sessions</th>
+    <th>Details</th>
+    
+  </tr>
+  <tr>
+    <td>
+<h6>Monday</h6>
+	<%=start_Monday%> to <%=end_Monday%>
+	<br>
+	Duration: <%=duration_Monday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+   <tr>
+    <td>
+<h6>Tuesday</h6>
+	<%=start_Tuesday%> to <%=end_Tuesday%>
+	<br>
+	Duration: <%=duration_Tuesday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Wednesday</h6>
+	<%=start_Wednesday%> to <%=end_Wednesday%>
+	<br>
+	Duration: <%=duration_Wednesday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Thursday</h6>
+	<%=start_Thursday%> to <%=end_Thursday%>
+	<br>
+	Duration: <%=duration_Thursday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+     <tr>
+    <td>
+<h6>Friday</h6>
+	<%=start_Friday%> to <%=end_Friday%>
+	<br>
+	Duration: <%=duration_Friday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+</table>
+<h2>
+</h2>
+<%
+
+}%>

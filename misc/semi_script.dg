@@ -1,0 +1,5 @@
+f=FormA[criteria];
+for each rec in f
+{
+	f1=FormB[Lookupfield == rec.ID];   // this will return the records of Form A associated with Form B
+}

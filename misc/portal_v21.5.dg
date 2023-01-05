@@ -1,0 +1,444 @@
+<%{
+childRec = Child[Parent_Administrator == zoho.loginuser];
+//  children = Child[ID in childRec];
+children = Child[Child_Name.first_name.contains(input.first_name)];
+//  FEUempty=children.Free_Entitlement_Universal != "";
+for each  child in children
+{
+%>
+<h2>
+<%
+if(child.Child_Name.first_name != "" && child.Child_Name.last_name != ""){
+%>
+<%=child.Child_Name.first_name%>&nbsp<%=child.Child_Name.last_name%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</h2>
+<p>Gender:&nbsp
+<%
+if(child.Child_Gender != "" && child.Child_Gender != null){
+%>
+<%=child.Child_Gender%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Date of Birth:&nbsp
+<%
+if(child.Child_DateofBirth != null && child.Child_DateofBirth.toString() != ""){
+%>
+<%=child.Child_DateofBirth%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Known As:&nbsp
+<%
+if(child.Known_As != null && child.Known_As != ""){
+%>
+<%=child.Known_As%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Syblings:&nbsp
+<%
+if(child.Child_Siblings != null && child.Child_Siblings != ""){
+%>
+<%=child.Child_Siblings%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Religion:&nbsp
+<%
+if(child.Child_Religion != null && child.Child_Religion != ""){
+%>
+<%=child.Child_Religion%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<hr>
+<p>Address:&nbsp
+<%
+if(child.Child_Address_Home.address_line_1 != null && child.Child_Address_Home.address_line_1 != ""){
+%>
+<br><%=child.Child_Address_Home.address_line_1%>
+<%
+}else{
+%>
+&nbspLine 1 Not Entered
+<%
+}
+if(child.Child_Address_Home.address_line_2 != null && child.Child_Address_Home.address_line_2 != ""){
+%>
+<br><%=child.Child_Address_Home.address_line_2%>
+<%
+}
+%>
+<br>
+<%
+if(child.Child_Address_Home.district_city != null && child.Child_Address_Home.district_city != ""){
+%>
+<%=child.Child_Address_Home.district_city%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<br>
+<%
+if(child.Child_Address_Home.state_province != null && child.Child_Address_Home.state_province != ""){
+%>
+<%=child.Child_Address_Home.state_province%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<br>
+<%
+if(child.Child_Address_Home.postal_Code != null && child.Child_Address_Home.postal_Code != ""){
+%>
+<%=child.Child_Address_Home.postal_Code%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<br>
+<%
+if(child.Child_Address_Home.country != null && child.Child_Address_Home.country != ""){
+%>
+<%=child.Child_Address_Home.country%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<br></p>
+<hr>
+<p>Dietary code:&nbsp
+<%
+if(child.Dietary_Requirements != null && child.Dietary_Requirements != ""){
+%>
+<%=child.Dietary_Requirements%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<p>Allergies:&nbsp
+<%
+if(child.Child_Allergies != null && child.Child_Allergies != ""){
+%>
+<%=child.Child_Allergies%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Medical Details:&nbsp
+<%
+if(child.Child_Medical_Details1 != null && child.Child_Medical_Details1 != ""){
+%>
+<%=child.Child_Medical_Details1%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<hr>
+<p>Doctor</p>
+<p>Doctors Name:&nbsp
+<%
+if(child.Child_Doctor != null && child.Child_Doctor.tostring() != ""){
+%>
+<%=child.Child_Doctor%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Surgery Phone Number:&nbsp
+<%
+if(child.Doctor_s_Phone_Number != null && child.Doctor_s_Phone_Number != ""){
+%>
+<%=child.Doctor_s_Phone_Number%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<p>Address of Surgery:&nbsp
+<%
+if(child.Doctor_s_Address != null && child.Doctor_s_Address.toString() != ""){
+%>
+<%=child.Doctor_s_Address%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<hr>
+<p>Childcare Setting:&nbsp
+<%
+if(child.Childcare_Setting != null && child.Childcare_Setting.toString() != ""){
+%>
+<%=child.Childcare_Setting.Setting_Name%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+<p>Attendance Period:&nbsp
+<%
+if(child.Attendance_Start_Date != null && child.Attendance_Start_Date.toString() != ""){
+%>
+<%=child.Attendance_Start_Date%>&nbsp-&nbsp
+<%
+}else{
+%>
+(Start Date) Not Entered
+<%
+}
+if(child.Attendance_Leaving_Date != null && child.Attendance_Leaving_Date.toString() != ""){
+%>
+<%=child.Attendance_Leaving_Date%></p>
+<%
+}else{
+%>
+&nbsp(Leaving Date) Not Entered
+<%
+}
+%>
+</p>
+<p>Term Time only:&nbsp
+<%
+if(child.Term_Time_Only != null && child.Term_Time_Only.toString() != ""){
+%>
+Yes
+<%
+}else{
+%>
+No
+<%
+}
+%>
+</p>
+<p>Status:&nbsp
+<%
+if(child.Child_Status != ""){
+%>
+<%=child.Child_Status%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Account Administrative User:&nbsp
+<%
+if(child.Parent_Administrator != "" && child.Parent_Administrator != null){
+%>
+<%=child.Parent_Administrator%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Billing contact name:&nbsp
+<%
+if(child.Billing_Contact_Name != null && child.Billing_Contact_Name.toString() != ""){
+%>
+<%=child.Billing_Contact_Name%></p>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Billing email address:&nbsp
+<%
+if(child.Billing_email_address != null && child.Billing_email_address != ""){
+%>
+<%=child.Billing_email_address%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Email Opt-In:&nbsp
+<%
+if(child.eMail_Opt_in != null && child.eMail_Opt_in.toString() != ""){
+%>
+<%=child.eMail_Opt_in%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Registration Form:&nbsp
+<%
+if(child.Child_Registration_Form != null && child.Child_Registration_Form.toString() != ""){
+%>
+<%=child.Child_Registration_Form%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>FE Forms:&nbsp
+
+</p>
+<p>FE Effective Date:&nbsp
+<%
+if(child.Eligibility_Code_Start_Date != null && child.Eligibility_Code_Start_Date.toString() != ""){
+%>
+<%=child.Eligibility_Code_Start_Date%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>Total Weekly Free Entitlement:&nbsp
+<%
+if(child.Free_Entitlement_Universal != null && child.Free_Entitlement_Universal.toString() != ""){
+%>
+<%=30 + child.Free_Entitlement_Extended%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>FE extended portion ( included in total above):&nbsp
+<%
+if(child.Free_Entitlement_Extended != null && child.Free_Entitlement_Extended >= 0){
+%>
+<%=child.Free_Entitlement_Extended%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<p>FE Eligibility Code (30h):&nbsp
+<%
+if(child.Free_Entitlement_Universal != null && child.Free_Entitlement_Universal.toString() != ""){
+%>
+Yes
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<hr>
+<p>Additional Information/Comments:&nbsp
+<%
+if(child.Additional_information_and_comments != null && child.Additional_information_and_comments != ""){
+%>
+<%=child.Additional_information_and_comments%>
+<%
+}else{
+%>
+Not Entered
+<%
+}
+%>
+</p>
+<hr>
+<h2>Parents/Guardians/Contacts</h2>
+<p>Full Name:&nbsp </p>
+<p>Relationship:&nbsp  </p>
+<p>Is Emergency Contact?:&nbsp  </p>
+<p>Mobile Phone:&nbsp  </p>
+<hr>
+<p>Full Name:&nbsp </p>
+<p>Relationship:&nbsp  </p>
+<p>Is Emergency Contact?:&nbsp  </p>
+<p>Mobile Phone:&nbsp  </p>
+<p>Work Phone:&nbsp  </p>
+<hr>
+<h2>Booking Profile</h2>
+<p> <%=child.Show_Booking_Profile%></p>
+<%
+}}%>

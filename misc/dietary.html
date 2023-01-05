@@ -1,0 +1,107 @@
+<%{
+	%>
+<!DOCTYPE html5>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<%
+	parentLogin = Child[Parent_Administrator == zoho.loginuser];
+	children = Child[ID in parentLogin];
+	if(children.toString() != "" && children != null && children.toString() != "null")
+	{
+		for each  child in children
+		{
+			%>
+<table class="w3-table w3-bordered" >
+<thead class="table-head w3-teal" >
+<th class="tg-0lax">
+	Child's Forename:<br>
+	Child's Surname:
+<%
+			if(child.Child_Name.first_name != "" && child.Child_Name.last_name != "")
+			{
+				%>
+</th>
+<th class="tg-0lax"><%=child.Child_Name.first_name%><br><%=child.Child_Name.last_name%></th>
+<%
+			}
+			else
+			{
+				%>
+<th class="tg-0lax">Name: </th>
+	<th class="tg-0lax"> Error! No Name Entered! </th>
+<%
+			}
+			%>
+</thead>
+<tbody>
+		<tr class="w3-hover-blue  w3-lime"><td>Dietary code:</td><td>
+<%
+			if(child.Dietary_Requirements != null && child.Dietary_Requirements != "")
+			{
+				%>
+<%=child.Dietary_Requirements%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-khaki"><td>Allergies:</td><td>
+<%
+			if(child.Child_Allergies != null && child.Child_Allergies != "")
+			{
+				%>
+<%=child.Child_Allergies%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+<tr class="w3-hover-blue  w3-lime"><td>Medical Details:</td><td>
+<%
+			if(child.Child_Medical_Details1 != null && child.Child_Medical_Details1 != "")
+			{
+				%>
+<%=child.Child_Medical_Details1%>
+<%
+			}
+			else
+			{
+				%>
+Not Entered
+<%
+			}
+			%>
+</td></tr>
+</tbody>
+</table>
+<br>
+<style type="text/css">
+/*table {width:40em;}
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;background:#1abc9c;color:#fff;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;font-style:italic;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}*/
+</style>
+<%
+		}
+	}
+
+}%>

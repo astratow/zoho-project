@@ -1,0 +1,370 @@
+<%{
+	if(Create_New_List[ID != 0].count(ID) == 0)
+	{
+		openUrl("#Form:Create_New_List","same window");
+	}
+	campaigns = 0;
+	subscribers = 0;
+	scheduled = 0;
+	email_count = 0;
+	campaigns = New_Campaign[ID != 0].count();
+	subscribers = Add_Subscriber[ID != 0].count();
+	scheduled = New_Campaign[ID != 0 && Status = "Scheduled"].count();
+	if(Email_Count1[ID != 0].count() != 0)
+	{
+		email_count = Email_Count1[ID != 0].Count_field;
+	}
+	%>
+<style>
+						  .main_home{
+							  margin-top:10px;
+						  width:100%;
+						  height:100%;
+						  position:relative;
+						  }
+						  .top_Navbar{
+						  min-width: 100%;
+						    display: table;
+						  }
+						  .main_container{
+						  
+						  }
+						  .countBox{
+						  box-sizing: border-box;
+						  width:25%;
+						      position: relative;
+						    min-height: 1px;
+						    padding-left: 15px;
+						    padding-right: 15px;
+						  float:left;
+						  }
+						  
+						  @media (max-width: 768px)
+						.countBox{
+						    width: 50%;
+						}
+						
+						  .tile-stats{
+						  position: relative;
+						    display: block;
+						    background: #303641;
+						    padding: 5px 20px;
+						    margin-bottom: 10px;
+						    overflow: hidden;
+						    -webkit-border-radius: 5px;
+						    -webkit-background-clip: padding-box;
+						    -moz-border-radius: 5px;
+						    -moz-background-clip: padding;
+						    border-radius: 5px;
+						    background-clip: padding-box;
+						    -webkit-transition: all 300ms ease-in-out;
+						    -moz-transition: all 300ms ease-in-out;
+						    -o-transition: all 300ms ease-in-out;
+						    transition: all 300ms ease-in-out;
+							padding-top: 0px !important;
+						  }
+						  .tile-red{
+						      background: #f56954;
+						  }
+						  .tile-stats.tile-red:hover {
+						    background: #f4543c;
+						}
+						.tile-green{
+						  background: #00a65a;
+						  }
+						  .tile-stats.tile-gren:hover {
+						    background: #008d4c;
+						}
+						.tile-aqua{
+						  background: #00c0ef;
+						  }
+						  .tile-stats.tile-aqua:hover {
+						    background: #00acd6;
+						}
+						.tile-blue{
+						  background: #0073b7;
+						  }
+						  .tile-stats.tile-blue:hover {
+						    background: #00639e;
+						}
+						  .icon{
+						  color: rgba(0, 0, 0, 0.1);
+						    position: absolute;
+						    right: 5px;
+						    bottom: 0px;
+						    z-index: 1;
+						  font-size: 90px;
+						    line-height: 0;
+						    margin: 0;
+						    padding: 0;
+						    vertical-align: bottom;
+						  }
+						  
+						  .num{
+						  font-size: 34px;
+						    font-weight: bold;
+						  }
+						  .tile-stats .num, .tile-stats h3, .tile-stats p {
+						    position: relative;
+						    color: #fff;
+						    z-index: 5;
+						    margin: 0;
+						    padding: 0;
+						  text-overflow: ellipsis;
+						    white-space: nowrap;
+						    overflow: hidden;
+						}
+						.tile-stats h3 {
+						    font-size: 18px;
+						    margin-top: 0px;
+							font-weight: 600;
+						}
+						 .tile-stats p {
+						    font-size: 11px;
+						    margin-top: 0px;
+						} 
+						.percentageChart_container {
+						    width: 70%;
+						  float:left;
+						}
+						.reportfullwidth>div>div{
+						box-sizing: border-box;
+						    display: flex;
+							margin:0px 10px !important;
+						}
+						#zohoreportel{
+						  height:100% !important;
+						  position:absolute;
+						  overflow:hidden;
+						}
+						  .recentActivity_container{
+							width:23.5%;
+						    float:right;
+						}
+						  .recent_activity{
+						  
+						  }
+						  .mostPopularClick_Container{
+						
+						  }
+						
+						    </style>
+						  
+						<div class="main_home">
+						  <div class="top_Navbar">
+						
+						  <div class="countBox">
+						  <div class="tile-stats tile-red">
+						  <div class="icon">
+						<i class="fa fa-bullhorn" aria-hidden="true"></i>
+						  </div>
+						<div class="num"><%=campaigns%></div>
+						<h3>Campaigns
+						  </h3>
+						  <p>so far you have created.
+						  </p>
+						  </div>
+						  
+						  </div>
+						  <div class="countBox">
+						  <div class="tile-stats tile-green">
+						  <div class="icon">
+						  <i class="fa fa-rss" aria-hidden="true"></i>
+						  </div>
+						<div class="num"><%=subscribers%></div>
+						<h3>Subscribers
+						  </h3>
+						  <p>in this account right now.
+						  </p>
+						  </div>
+						  
+						  </div>
+						  <div class="countBox">
+						  <div class="tile-stats tile-aqua">
+						  <div class="icon" style="font-size: 85px;bottom: 4px;">
+						<i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+						  </div>
+						<div class="num"><%=scheduled%></div>
+						<h3>Scheduled
+						  </h3>
+						  <p>will be sent on selected date.
+						  </p>
+						  </div>
+						  
+						  </div>
+						  <div class="countBox">
+						  <div class="tile-stats tile-blue">
+						  <div class="icon" style="right: 7px;color:rgba(255, 255, 255, 0.22);bottom: 3px;">
+						 <i class="fa fa-envelope" aria-hidden="true"></i>
+						  </div>
+						<div class="num"><%=email_count%></div>
+						<h3>Emails Sent
+						  </h3>
+						  <p>total emails sent so far using this app.
+						  </p>
+						  </div>
+						  
+						  </div>
+						
+						  </div> 
+						  <div class="main_container" style="box-sizing: border-box;margin: 0px 15px;">
+						  <div class='middle_container' style="width: 100%; display:table;box-sizing: border-box;">
+							<div class='percentageChart_container'>
+							  <div style="text-align:center;margin-top: 3px;margin-right: -6%;border: 1px dashed #d8d8d8;border-radius: 3px;">Subscribers Activity Percentage</div>
+							<div style="height:340px;width:100%" elName='zc-component' reportLinkName='Activity_Percentage' params='zc_Header=false'></div>
+						</div>
+						  
+						  <div class="recentActivity_container" style="">
+						  <div class="panel_container" style="border-color: rgb(221, 221, 221);margin-bottom: 20px;background-color: rgb(255, 255, 255);box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 1px;    border-width: 1px;    border-style: solid;    border-image: initial;    border-radius: 4px;">
+						  <div class="panel_head" style="color: rgb(51, 51, 51);background-color: rgb(245, 245, 245);border-color: rgb(221, 221, 221);border-top-left-radius: 3px;border-top-right-radius: 3px;padding: 10px 15px;border-bottom: 1px solid transparent;"> Other Information
+						  
+						 </div>
+						  <div class="panel_bodyContainer" style="">
+						  <div style="">
+						  </div>
+						  <ul style="margin: 0px;list-style-type: none;">
+						
+						  <li style="padding: 8px 0px 0px 0px;border-left: 1px solid #afafaf;position: relative;">
+						
+						  <div style="float:left;position: absolute;top: 20%; left: -3%; background: white;color: #0073b7;font-size: 20px;">
+						  <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+						  </div>
+						  <div style="margin:  0px 10px 0px 20px;border-bottom: 1px dotted #cecdcd;">
+						      <div style="font-size: 15px;    font-weight: 600;">Recent Campaigns</div>
+<%
+	if(New_Campaign[ID != 0 && Status == "Sent"].count() != 0)
+	{
+		for each  rec in New_Campaign[ID != 0 && Status == "Sent"] sort by Added_Time desc range from 0 to 1
+		{
+			%>
+<div style="margin-top: 3px;">
+						  <div style="color: #212121;    font-size: 13px;">
+						  <%=rec.Campaign_Name%>
+						  </div>
+						  <div style="color: gray;    font-size: 10px;">
+						<%=rec.Date_Time%>
+						  </div>
+						  </div>
+<%
+		}
+	}
+	else
+	{
+		%>
+<div style="min-height: 55px;display: flex;align-items: center;font-size: 13px;"> No Campaigns Sent Yet!
+						  </div>
+<%
+	}
+	%>
+</div>
+						  </li>
+						  
+						    <li style="padding: 8px 0px 0px 0px;border-left: 1px solid #afafaf;position: relative;">
+						  <div style="float:left;position: absolute;top: 20%; left: -3%; background: white;color: #00c0ef;font-size: 20px;">
+						  <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+						  </div>
+						    <div style="margin:  0px 10px 0px 20px;border-bottom: 1px dotted #cecdcd;">
+						      <div style="font-size: 15px;    font-weight: 600;">Scheduled Campaigns</div>
+<%
+	if(New_Campaign[ID != 0 && Status == "Scheduled"].count() != 0)
+	{
+		for each  rec in New_Campaign[ID != 0 && Status == "Scheduled"] sort by Added_Time desc range from 0 to 1
+		{
+			%>
+<div style="margin-top: 3px;">
+						  <div style="color: #212121;    font-size: 13px;">
+						 <%=rec.Campaign_Name%>
+						  </div>
+						  <div style="color: gray;    font-size: 10px;">
+						<%=rec.Date_Time%>
+						  </div>
+						  </div>
+<%
+		}
+	}
+	else
+	{
+		%>
+<div style="min-height: 55px;display: flex;align-items: center;font-size: 13px;"> No Campaigns Scheduled Yet!
+						  </div>
+<%
+	}
+	%>
+</div>
+						    </li>
+						  
+						    <li style="padding: 8px 0px 6px 0px;border-left: 1px solid #afafaf;position: relative;">
+						  <div style="float:left;position: absolute;top: 20%; left: -3%; background: white;color: green;font-size: 20px;">
+						  <i class="fa fa-bullhorn" aria-hidden="true"></i>
+						  </div>
+						  <div style="margin:  0px 10px 0px 20px;     border-bottom: 1px dotted #cecdcd;">
+						      <div style="font-size: 15px;    font-weight: 600;">Most Popular Campaigns</div>
+<%
+	if(New_Campaign[ID != 0].count() != 0)
+	{
+		mostPopularCampaign = "No Campaign Activity Updated!";
+		openedCount = 0;
+		for each  rec in New_Campaign[ID != 0] sort by Added_Time desc
+		{
+			if(openedCount < Subscribers_Subform_For_New_Campaign[New_Campaign_Bi == rec.ID && Status == "Opened"].count())
+			{
+				mostPopularCampaign = rec.Campaign_Name;
+				openedCount = Subscribers_Subform_For_New_Campaign[New_Campaign_Bi == rec.ID && Status == "Opened"].count();
+			}
+		}
+		%>
+<div style="margin-top: 3px;">
+						  <div style="color: #212121;    font-size: 13px;">
+						  <%=mostPopularCampaign%>
+						  </div>
+						  <div style="color: gray;    font-size: 10px;">
+						 based on opened activity.
+						  </div>
+						  </div>
+<%
+	}
+	else
+	{
+		%>
+<div style="color: #212121;font-size: 13px;min-height: 55px; display: flex;align-items: center;">
+						  No Campaign Added Yet!
+						  </div>
+<%
+	}
+	%>
+</div>
+						    </li>
+<%
+	if(zoho.loginuser = zoho.adminuser)
+	{
+		%>
+<li style="padding: 8px 0px 6px 0px;border-left: 1px solid #afafaf;position: relative;">
+						  <div style="float:left;position: absolute;top: 20%; left: -3%; background: white;color: #1056a4;font-size: 20px;"> 
+						  <i class="fa fa-link" aria-hidden="true"></i>
+							 </div>
+						  <div style="margin: 0px 10px 0px 20px;">
+						  <div style="font-size: 15px;font-weight: 600;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">Subscription Form For Website</div>
+						  <div style="margin-top: 3px;"> 
+						  <div style="color: #000000;font-size: 13px;">Get Embed Link for 'Subscribe Me Form'</div>
+						  <a href="https://www.zoho.com/creator/help/forms/embed-form-report-in-website.html#embed-forms" target="_blank">
+						  <div style="font-size: 10px;color: #004b9e;"> How to generate permalink?	 </div></a>
+						  </div>
+<%
+	}
+	%>
+</ul>
+						   </div>
+						   </div>
+						  </div>
+						  
+						  
+						  </div>
+						  </div>
+						  <div>
+						  <div style="text-align:center;margin-top: 3px;border: 1px dashed #d8d8d8;    margin-left: 15px;    margin-right: 15px;">Campaigns Activity Info Chart</div>
+						        <div style="height:320px;width:100%" elName='zc-component' reportLinkName='Campaigns_info' params='zc_Header=false'></div>            
+						  </div>
+						  </div>
+<%
+
+}%>
