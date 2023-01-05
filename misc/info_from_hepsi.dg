@@ -1,0 +1,30 @@
+Please refer this below sample ZML script.
+
+<%{
+fet=<FORM>[CRITERIA];
+var=fet.Field_LinkName;
+%>
+<panel>
+<pr height='fill' width='fill'>
+<pc width='100%' bgColor='#FFFFFF' padding='20px' hAlign='center' vAlign='middle'>
+<pr height='auto' width='auto'>
+<pc>
+<image color='#FFFFFF' bgColor='#2A70E7' width='52px' height='52px' type='icon' value='business-gold' size='3' marginRight='7px' cornerRadius='26px' iconType='solid' /> </pc>
+<pc hAlign='left'>
+<pr>
+<pc hAlign='left'>
+<text type='Text' value="<%=var%>" size='3' color='#333333'> </text>
+</pc>
+</pr>
+<pr>
+<pc hAlign='left'>
+<text type='Text' value='943' size='8' color='#2A70E7' bold='true' marginTop='2px'> </text>
+</pc>
+</pr>
+</pc>
+</pr>
+</pc>
+</pr>
+</panel>
+<%
+}%>

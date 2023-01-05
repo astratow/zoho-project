@@ -1,0 +1,230 @@
+list Parents_view_2
+{
+	displayName = "Parents view 2"
+	show all rows from Child    
+	(
+		Child_Name  as "Child Name"
+	 	(
+	      	displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 	)
+		Child_Register as "Child Register"
+		users as "Users"
+		Known_As as "Known As"
+		Show_Primary_Information as "Show Primary Information"
+		Show_Medical_Details as "Show Medical Details"
+		Show_Dietary_Details as "Show Dietary Details"
+		Show_Contacts as "Show Contacts"
+		Show_Confidential_Information as "Show Confidential Information"
+		Show_Administration_Details as "Show Administration Details"
+		Show_Record_Information as "Show Record Information"
+		Show_Booking_Profile as "Show Booking Profile"
+		Show_Free_Entitlement as "Show Free Entitlement"
+		Child_Address_Home  as "Home Address"
+	 	(
+	      	displayformat = [address_line_1+""+address_line_2+""+district_city+""+state_province+""+postal_Code+""+country]
+	      	enable = Link_to_Map,Show_As_Text
+	 	)
+		Child_Gender as "Gender"
+		Child_Religion as "Religion"
+		Child_Siblings as "Siblings"
+		Child_DateofBirth as "Date of Birth"
+		Child_Phone_Number as "Phone"
+		(
+			displayformat = plainnumber 
+			linktodial = enable
+		)
+		Child_Allergies as "Allergies"
+		Child_Medical_Details1 as "Medical Details"
+		Child_Doctor  as "Doctor"
+	 	(
+	      	displayformat = [first_name1+""+prefix1+""+last_name1+""+suffix1]
+	 	)
+		Doctor_s_Address  as "Doctor's Address"
+	 	(
+	      	displayformat = [address_line_11+""+address_line_21+""+district_city1+""+state_province1+""+postal_Code1+""+country1]
+	      	enable = Link_to_Map,Show_As_Text
+	 	)
+		Doctor_s_Phone_Number as "Doctor's Phone Number"
+		(
+			displayformat = plainnumber 
+			linktodial = enable
+		)
+		Dietary_Description as "Dietary Description"
+		Dietary_Requirements as "Dietary Requirements"
+		Billing_email_address as "Billing email address"
+		Billing_Discount as "Billing Discount Percent"
+		Billing_Price_Category as "Billing Price Category"
+		Parent_date_of_birth as "Parent date of birth"
+		Parent_Administrator as "Parent Administrator"
+		Billing_Contact_Name as "Billing Contact Name"
+		Billing_Reference as "Billing Reference"
+		Billing_Discount_Effective_Date as "Billing Discount Effective Date"
+		eMail_Opt_in as "eMail Opt-in"
+		Parent_Nat_Ins_Number as "Parent Nat Ins Number"
+		Child_Registration_Form as "Child Registration Form"
+		Child_SEN_COP_Stage as "Child SEN COP Stage"
+		File_attachments as "File attachments"
+		Account_Suspended as "Account Suspended"
+		Child_Status as "Child Status"
+		Confidential_file_attachments as "Confidential file attachments"
+		Additional_information_and_comments as "Additional information and comments"
+		Attendance_Start_Date as "Attendance Start Date"
+		Term_Time_Only as "Term Time Only"
+		Attendance_Leaving_Date as "Attendance Leaving Date"
+		Childcare_Setting as "Childcare Setting-Main"
+		Proof_of_Date_of_Birth_Seen1 as "Proof of Date of Birth Seen"
+		Free_Entitlement_Universal as "Free Entitlement-Universal"
+		Tax_Free_Childcare_Ref as "Tax Free Childcare Ref"
+		Shared_with_another_nursery as "Shared with another nursery"
+		Free_Entitlement_Extended as "Free Entitlement-Extended"
+		Eligibility_Code_Start_Date as "Start Date"
+		Eligibility_Code_End_Grace_Period_Date as "Grace Period Date"
+		Eligibility_Code_End_Date as "End Date"
+	)
+	quickview
+	(
+		layout
+		(
+			datablock1
+			(
+				fields
+				(
+					Child_Name as "Child Name"
+					Child_Register as "Child Register"
+					users as "Users"
+					Known_As as "Known As"
+					Show_Primary_Information as "Show Primary Information"
+					Show_Medical_Details as "Show Medical Details"
+					Show_Dietary_Details as "Show Dietary Details"
+				)
+			)
+		)
+
+		menu
+    	(
+    	 	header
+    	 	(
+    		 	Edit 
+    		 	Duplicate 
+    		 	Delete 
+    	 	)
+			record
+			(
+				Edit   	   
+				Duplicate   	   
+				Delete   	   
+    		)
+    	)
+    	action
+    	(
+			on click
+			(
+				View Record   	   
+    		)
+			on right click
+			(
+				Edit   	   
+				Delete   	   
+				Duplicate   	   
+				View Record   	   
+    		)
+     	)
+	)
+	detailview
+	(
+		layout
+		(
+			datablock1
+			(
+		     	title = "Overview"
+				fields
+				(
+					Child_Name as "Child Name"
+					Child_Register as "Child Register"
+					users as "Users"
+					Known_As as "Known As"
+					Show_Primary_Information as "Show Primary Information"
+					Show_Medical_Details as "Show Medical Details"
+					Show_Dietary_Details as "Show Dietary Details"
+					Show_Contacts as "Show Contacts"
+					Show_Confidential_Information as "Show Confidential Information"
+					Show_Administration_Details as "Show Administration Details"
+					Show_Record_Information as "Show Record Information"
+					Show_Booking_Profile as "Show Booking Profile"
+					Show_Free_Entitlement as "Show Free Entitlement"
+					Child_Address_Home as "Home Address"
+					Child_Gender as "Gender"
+					Child_Religion as "Religion"
+					Child_Siblings as "Siblings"
+					Child_DateofBirth as "Date of Birth"
+					Child_Phone_Number as "Phone"
+					Child_Allergies as "Allergies"
+					Child_Medical_Details1 as "Medical Details"
+					Child_Doctor as "Doctor"
+					Doctor_s_Address as "Doctor's Address"
+					Doctor_s_Phone_Number as "Doctor's Phone Number"
+					Dietary_Description as "Dietary Description"
+					Dietary_Requirements as "Dietary Requirements"
+					Billing_email_address as "Billing email address"
+					Billing_Discount as "Billing Discount Percent"
+					Billing_Price_Category as "Billing Price Category"
+					Parent_date_of_birth as "Parent date of birth"
+					Parent_Administrator as "Parent Administrator"
+					Billing_Contact_Name as "Billing Contact Name"
+					Billing_Reference as "Billing Reference"
+					Billing_Discount_Effective_Date as "Billing Discount Effective Date"
+					eMail_Opt_in as "eMail Opt-in"
+					Parent_Nat_Ins_Number as "Parent Nat Ins Number"
+					Child_Registration_Form as "Child Registration Form"
+					Child_SEN_COP_Stage as "Child SEN COP Stage"
+					File_attachments as "File attachments"
+					Account_Suspended as "Account Suspended"
+					Child_Status as "Child Status"
+					Confidential_file_attachments as "Confidential file attachments"
+					Additional_information_and_comments as "Additional information and comments"
+					Attendance_Start_Date as "Attendance Start Date"
+					Term_Time_Only as "Term Time Only"
+					Attendance_Leaving_Date as "Attendance Leaving Date"
+					Childcare_Setting as "Childcare Setting-Main"
+					Proof_of_Date_of_Birth_Seen1 as "Proof of Date of Birth Seen"
+					Free_Entitlement_Universal as "Free Entitlement-Universal"
+					Tax_Free_Childcare_Ref as "Tax Free Childcare Ref"
+					Shared_with_another_nursery as "Shared with another nursery"
+					Free_Entitlement_Extended as "Free Entitlement-Extended"
+					Eligibility_Code_Start_Date as "Start Date"
+					Eligibility_Code_End_Grace_Period_Date as "Grace Period Date"
+					Eligibility_Code_End_Date as "End Date"
+				)
+			)
+			datablock2
+			(
+		     	title = "Child Register"
+		     	related field = Child_Register
+				fields
+				(
+					Child_Register as "Child Register"
+				)
+			)
+			datablock3
+			(
+		     	title = "Dietary Description"
+		     	related field = Dietary_Description
+				fields
+				(
+					Dietary_Code as "Dietary Code"
+					Dietary_Description as "Dietary Description"
+				)
+			)
+		)
+
+		menu
+    	(
+    	 	header
+    	 	(
+    		 	Edit 
+    		 	Duplicate 
+    		 	Delete 
+    	 	)
+    	)
+	)
+}

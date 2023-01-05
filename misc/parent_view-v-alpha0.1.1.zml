@@ -1,0 +1,562 @@
+<%{
+  fet = Child[Child_Name.first_name != null];
+  children = fet.Child_Name;
+  %>
+<panel elementName="Panel">
+  <pr width='fill' height='fill'>
+    <pc padding='0px' bgColor='#FFFFFF' width='100%' hAlign='center' vAlign='middle'>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#2A70E7' size='20px' uppercase='false' underline='false' bold='true' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Child : Amaral, Sebastian <%=children%>'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc padding='17px' width='50%'>
+          <pr width='auto' height='auto'>
+            <pc padding='5px'>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Surname: Amaral'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='First Name: Sebastian'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Middle Names:'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Known As:  Seb/ Sebby'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Date of Birth:  2019-01-29'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Gender:  Male'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+        <pc padding='17px' width='50%'>
+          <pr width='auto' height='auto'>
+            <pc padding='5px'>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Home Address:'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='2 Sailsbury Cottages'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Chapel Lane'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Horsted Keynes'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='RH17 7AF'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='United Kingdom'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Syblings: None'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Religion:  None'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value=''> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Dietary Code:  NSD - NO SPECIAL DIET'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Allergies: None'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Medical Details:  None'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Doctor Details'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Doctors Name : Dr Reader'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Surgery Phone Number: 01444 484056'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Address of Surgery: Lindfield Medical Centre, High St, Lindfield'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc padding='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value=''> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc padding='0px' bgColor='transparent' width='47%' hAlign='center'>
+          <pr width='fill' height='fill'>
+            <pc padding='17px' width='100%'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Childcare Settings:'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text action='OpenURL' url='https://link.com' target='new-window' marginLeft='0px' marginRight='0px' marginTop='10px' color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Link'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Attendance Period:  2020-06-01 to 2024-10-01'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Attendance Period:  2020-06-01 to 2024-10-01'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Term Time only:  No'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Status:  Active'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Account Administrative User:  Ana Amaral'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Billing contact name:  Ana Amaral'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Billing email address:  anaamaral222@gmail.com'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Email Opt-In:  IN'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+        <pc padding='0px' width='53%'>
+          <pr width='fill' height='fill'>
+            <pc padding='17px' width='100%'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Registration Form:'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='link.pdf'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='FE Forms:'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc padding='0px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='link.pdf'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc padding='0px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='link.pdf'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc padding='0px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='link.pdf'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc padding='0px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#2A70E7' size='16px' uppercase='false' underline='true' bold='false' italic='true' type='Text' bgColor='rgba(0, 0, 0, 0)' value='link.pdf'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='FE Effective Date:  01/4/2022'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Total Weekly Free Entitlement:  15.00hrs'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='FE extended portion ( included in total above):  4.00hrs'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+          <pr width='fill' height='fill'>
+            <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+              <pr width='auto' height='auto'>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='FE Eligibility Code (30h):  50054351545'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='17px' paddingBottom='0px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value=''> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc padding='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text action='OpenReport' componentLinkName='Parent_child' target='new-window' color='#000000' size='20px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Parents/Guardians/Contacts'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Full Name:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Ana Amara'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Relationship:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Parent'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Is Emergency Contact?:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Yes'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Mobile Phone:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='07955444932'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Full Name:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Andrew Williams'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Relationship:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Parent'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Is Emergency Contact?:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Yes'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Mobile Phone:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='07764947504'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='49%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Work Phone:'> </text>
+            </pc>
+          </pr>
+        </pc>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='51%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text marginLeft='0px' marginRight='300px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='07748601865'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value=''> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='0px' paddingLeft='17px' paddingRight='17px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text action='OpenReport' componentLinkName='All_Child_Booking_Profiles' target='new-window' color='#000000' size='20px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Booking profile'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
+<%
+
+}%>

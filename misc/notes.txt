@@ -1,0 +1,8 @@
+Raja
+https://www.zoho.com/blog/creator/zoho-creator-why-edit-mode-why-live-mode.html
+
+
+	fet = Child[Child_Name.first_name != null];
+	children = fet.Child_Name.first_name;
+
+	<Report_URL> ?ID=<record_ID> // pulling out individual record

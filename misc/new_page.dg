@@ -1,0 +1,56 @@
+<%{
+	children = Child[Child_Name.first_name != null];
+	%>
+<table  style="width:100%" border="1px solid black" >
+
+<tr>
+
+<th style="width:10%">First Name</th>
+
+<th style="width:10%">Last Name</th>
+
+<th style="width:10%">Gender</th>
+
+<th style="width:10%">Date of Birth</th>
+
+<th style="width:10%">Known As</th>
+
+<th style="width:10%">Home Address</th>
+
+<th style="width:10%">Syblings</th>
+
+<th style="width:10%">Gender</th>
+
+<th style="width:10%">Date of Birth</th>
+
+<th style="width:10%">Date of Birth</th>
+</tr>
+
+</table>
+<%
+	for each  child in children
+	{
+		%>
+<table style="width:100%" border="1px solid black">
+
+<tr>
+
+<td style= "width:10%"><%=child.Child_Name.first_name%></td>
+
+<td style= "width:10%"><%=child.Child_Name.last_name%></td>
+<td style = "width:10%"><%=child.Child_Gender%></td>
+<td style= "width:10%"><%=child.Child_DateofBirth%></td>
+<td style= "width:10%"><%=child.Known_As%></td>
+<td style= "width:10%"><%=child.Child_Address_Home.address_line_1%><br><%=child.Child_Address_Home.address_line_2%><br><%=child.Child_Address_Home.city%><br></td>
+
+<td style= "width:10%"><%=child.Child_Siblings%></td>
+<td style = "width:10%"><%=child.Child_Gender%></td>
+<td style= "width:10%"><%=child.Child_DateofBirth%></td>
+<td style= "width:10%"><%=child.Child_DateofBirth%></td>
+</tr>
+
+</table>
+<%
+	}
+
+}%>

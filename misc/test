@@ -1,0 +1,105 @@
+<panel elementName="Panel">
+  <pr width='fill' height='fill'>
+    <pc padding='0px' bgColor='#FFFFFF' width='100%' hAlign='center' vAlign='middle'>
+      <pr width='fill' height='fill'>
+        <pc paddingTop='17px' paddingLeft='17px' paddingRight='0px' paddingBottom='17px' bgColor='transparent' width='100%' hAlign='center'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <text color='#000000' size='20px' uppercase='false' underline='false' bold='true' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='View'> </text>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+      <pr width='fill' height='fill'>
+        <pc padding='17px' width='50%'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Surname: Amaral'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='First Name: Sebastian'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Middle Names:'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Known As:  Seb/ Sebby'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Date of Birth:  2019-01-29'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' bgColor='rgba(0, 0, 0, 0)' value='Gender:  Male'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+        <pc padding='17px' width='50%'>
+          <pr width='auto' height='auto'>
+            <pc>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='Home Address: '> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='2 Sailsbury Cottages'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='Chapel Lane'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='Horsted Keynes'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='RH17 7AF'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='United Kingdom'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='Syblings: '> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='None'> </text>
+                </pc>
+              </pr>
+              <pr>
+                <pc>
+                  <text marginLeft='0px' marginRight='0px' marginTop='10px' color='#000000' size='16px' uppercase='false' underline='false' bold='false' italic='false' type='Text' value='Religion: 
+None'> </text>
+                </pc>
+              </pr>
+            </pc>
+          </pr>
+        </pc>
+      </pr>
+    </pc>
+  </pr>
+</panel>
